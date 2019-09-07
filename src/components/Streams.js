@@ -58,6 +58,7 @@ function Streams() {
                     className="link"
                     href={"https://twitch.tv/"+ channel.user_name}
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     watch {channel.user_name}'s stream
                   </a>
