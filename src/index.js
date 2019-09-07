@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+import Games from './components/Games';
 
 function App() {
   return (
-    <div>
-      <h1>This is my app</h1>
-    </div>
+    <Router>
+      <Route exact path="/" component={Games} />
+    </Router>
   )
 }
 
