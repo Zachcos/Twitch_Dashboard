@@ -7,10 +7,18 @@ function Games() {
   useEffect(() => {
     const fetchData = async () => {
       const result = await api.get("https://api.twitch.tv/helix/games/top");
-      console.log(result.data);
-    }
+      let dataArray = result.data.data;
+      let finalArray = dataArray.map(game => {
+        let newURL = game.box_art_url
+          .replace("{width}", "300")
+          .replace("{height}", "300")
+        game.box_art_url = newURL;
+        return game
+      });
+      setGames(finalArray)
+    };
     fetchData();
-  })
+  }, []);
 
   return <h3>This is the Games component</h3>
 };
